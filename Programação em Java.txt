@@ -1,0 +1,379 @@
+ Em um projeto, temos uma classe principal que gerencia as outras classes.
+ Em cada classe há um objeto e este possui características (variáveis) e
+comportamentos (métodos).
+ Em cada objeto, atribuímos as variáveis (privadas ou não) e colocamos diversos
+métodos (funções públicas ou não)
+ Esses métodos precisam ser 'linkados' com as variáveis da classe principal. O
+nome do objeto será o 'nome do tipo da variável' que deve ser ligado a uma
+atribuição como 'new Car();'
+ Assim, o nome da variável principal é atribuído as funções (métodos) dos objetos
+como c.openRearDoor();
+
+
+private/public diferencia um atributo de uma variável:
+Um atributo é nativo de uma determinada classe, como String name = new String();
+
+
+new String() / new Array -> É o construtor de um atributo ou variável. Também faz
+o 'link' com os objetos
+
+
+import *nome do pacote* -> Usado para importar um pacote em outro, assim 
+possibilitando utilizar as classes do pacote importado
+-> import firstClass.*;
+
+
+//Pacotes sobre pacotes
+pacote
+pacote.primeiro
+
+
+Visibilidade de Atributos:
+
+public -> O atributo fica visível para todos os objetos, até os importados de
+outro pacote
+
+private -> O atributo é privado daquele objeto independente do pacote
+
+protected/default -> O atributo pode ser acessado apenas pelos objetos dos
+pacotes, mesmo importando não é possível acessar os atributos daquele objetos
+
+final -> O atributo não pode ser modificado por nenhum objeto, apenas pelo 
+objeto de origem
+
+static -> O atributo se torna global a classe, ou seja, pode ser acessado
+simultâneamente por outros objetos pertencentes a classe preservando o seu valor
+
+
+Visibilidade de Métodos: Os dois modos de return
+
+
+System.out.println(myFirstProject.addResources());
+			ou
+String money = myFirstProject.addResources();
+System.out.println(money);
+
+:-> Inserção direita pelo print();
+:-> Realocando em uma variável e depois imprimindo na tela
+
+
+this. -> Usado para diferenciar, especificar o que é uma variável e o que é um
+atributo ou parâmetro
+
+
+get e set -> São utilizados para o encapsulamento dos métodos das Class
+
+- get: Dá o retorno dos atributos dos objetos.
+- set: Não necessita de return. Utiliza parâmetros para modificar o valor dos
+atributos.
+
+
+Construtor -> Além do new String() podemos ter um construtor 'manual', ou seja,
+tendo que declarar todos os atributos como no set...
+Assim: 
+
+public class Car {
+	public String name = new String();
+	public String type = null;
+	protected final int year = 0;
+	public int numberDoors = 1;
+	public int numberCars = 0;
+	
+	
+	public Car(String name, String type, int numberDoors, int numberCars) {
+		this.name = name;
+		this.type = type;
+		this.numberDoors = numberDoors;
+		this.numberCars = numberCars;
+	}
+
+
+
+Nenhuma Interface possui atributos, apenas métodos abstratos
+
+
+
+Relacionamento de Agregação: Multiplicidade / Diagrama de Classes
+
+ Relação de entidade e relacionamento em Banco de Dados: Cardinalidade
+ É uma relação entre duas(ou mais?) entidades que possuem um limite máimo e 
+mínimo para prover os dados entre cada um.
+ A evolução desse método é a Multiplicidade usada em Relacionamento de Agregação
+
+
+
+Tipo Abstrato de Dados
+
+ Quando criamos um tipo 'abstrato' para o atributo, ou seja, criamos um atributo
+e caso o seu valor de atributo seja um objeto, atribuimos a ele como tipo a sua
+própria Class (provindo do construtor principal 'new Lutador();')
+
+
+
+implements -> Usado para implementar uma interface
+import -> Usado para importar um pacote
+extends -> Usada para extender uma subclasse
+
+DecimalFormat deci = new DecimalFormat("0.00");        
+System.out.print(deci.format(disCar/litro) + " Km/L\n");
+
+Random aleatorio = new Random(); 
+int valor = aleatorio.nextInt(10) + 1; -> Irá receber um valor entre 1 e 10
+
+Scanner sc1 = new Scanner(System.in);
+opcao = parseInt(sc.nextLine());
+
+
+Uma variável ser final significa que não pode alterar o seu valor.
+Um método ser final significa que você não pode sobrepô-lo.
+Uma classe ser final significa que você não pode estendê-la, ou seja: não pode 
+criar uma subclasse(classe filha) dela.
+
+
+O Metodos Abstratos são FUNDAMENTAIS quando voce quer utilizar metodos genericos!
+Voce pode usar um metodo implementado na classe Pai que tenha uma chamada sobre 
+um metodo abstrato, e a implementação do metodo abstrato varia de acordo com a 
+classe filha, ou seja, o metodo da classe pai chama o metodo abstrato da classe 
+filha.
+
+- Raiz NÃO é principal
+- Colocar a Raiz com abstract?
+
+Assinaturas de Métodos: Para os métodos serem considerados iguais, eles devem
+possuir a mesma quantidade de atributos com os mesmos tipos. O nome e o retorno
+não são relevantes para essa descrição.
+
+Polimorfismo de Sobreposição:
+- Mesmo nome
+- Mesma Assinatura
+- Diferentes Classes
+
+Polimorfismo de Sobrecarga:
+- Mesmo nome
+- Diferentes Assinaturas
+- Mesma Classe
+
+
+Se a SuperClasse tiver um construct, sua subclasse OBRIGARORIAMENTE deverá ter um
+construct com os mesmos atributos (poderá acrescentar os atributos da Super)
+-> Super(nome, idade, sexo)
+
+
+/===== Data de Hoje =====/
+
+Date date = new Date();
+SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+String f = formatter.format(date);
+System.out.println(f);
+
+
+Integer.parseInt() = Converter String para Inteiro
+getText() -> Exemplo utilizado para acessar um bloco de texto em Swing
+setText() -> Exemplo utilizado para escrever um texto em Swing
+
+Float.toString() = Converter Float para String
+Double.toString() = Converter Double para String
+Integer.toString() = Converter Inteiro para String
+
+Arrays.toString(notas) = toString para Array
+
+.equals() = É utilizado para fazer uma igualdade de OBJETOS/STRINGS
+.equalsIgnoreCase() = Comparação sem Case Sensitive
+
+OBS: O for each funciona para Arrays além do ArrayList
+
+instanceOf = Utilizado para verificar se tal objeto está instanciado em uma classe
+
+Ex:
+if(Pessoa instanceOf pes){
+	System.out.println("É da classe Pessoa");
+
+}else{
+	System.out.println("Não é da classe Pessoa");
+}
+
+
+Throwable -> SuperClasse de todas as exceções
+
+Exemplos de exceções:
+
+- ArithmeticException =: Exceção por algum erro aritmético
+- ArrayIndexOutOfBoundsException =: Exceção por estouro de array
+
+System.exit(0) -> Utilizado para se encerrar um programa DIRETAMENTE na
+memória, como um break
+
+try -> Executa o código
+catch -> Captura a exceção
+finally -> Executa algo independente se tiver exceção ou não
+
+
+Recomendado usar o Exception no lugar do Throwable
+Métodos Exceptions:
+
+.getMessage() -> Informa a descrição do erro
+.printStackTrace() -> Informa onde aconteceu o erro
+
+Error: resulta na finalização do programa
+Exception: possível tratar o erro e continuar execução do programa
+
+ Sempre que criarmos um método (que tenha ou ocorra uma exceção), devemos
+tratar essa exceção em outro método.
+ No método ONDE OCORRE a exceção, deve-se lançar === throws Exception ===
+
+Erros Verificados (Exception): É possível tratar no Java
+Erros Não verificados (Error): Não é possível tratar no Java
+como a falta de memória
+
+Exceções verificadas: IOException / SQLException
+Exceções Não verificadas: RuntimeException
+
+
+Criando minha PRÓPRIA exceção:
+
+- Colocar dentro do try{ throw new *classe*}
+- Essa *classe* deve estender a classe Exception
+- Também devemos sobreescrever o método toString()
+- O toString() será o responsável nos dar a resposta da exceção
+
+
+
+Data Aleatória Formatada:
+
+//  ERRADO  //
+
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+Calendar cal = Calendar.getInstance();
+cal.set(2010, Calendar.DECEMBER, 24);
+Date dataAdocao1 = cal.getTime();
+DateFormat formataData = DateFormat.getDateInstance();
+        
+System.out.println(formataData.format(dataAdocao1));
+
+
+// CERTO //
+
+DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy"); 
+LocalDate data = LocalDate.parse(data1, formato); 
+System.out.println(formato.format(data));
+
+Set -> Arrays (listas) de objetos que NÃO se repetem
+
+
+
+Datas no Java 8+ (Padrão ISO)
+
+LocalDate agora = LocalDate.now(); -> Data atual
+LocalDate.of(2019, 2, 1) -> Data pré-definida
+LocalDate.parse("2019-02-01") -> String pré-definida
+
+agora.plusDays(30) -> Acréscimo de 30 Dias
+agora.minus(1, ChronoUnit.MONTHS); -> Decréscimo 1 mês
+
+agora.getDayOfWeek() -> Dia da Semana
+
+agora.DayOfYear -> Qual é o dia do ano?
+
+agora.isLeapYear() -> Ano Bissexto
+
+
+Horas no Java 8+ (Padrão ISO)
+
+LocalTime hAgora = LocalTime.now(); -> Hora atual
+LocalTime.of(20, 18) -> Hora pré-definida
+LocalTime.parse("20:18") -> String pré-definida
+
+hAgora.plusMinutes(50) -> Acréscimo de 50 Minutos
+hAgora.minus(40, ChronoUnit.HOURS) -> Decréscimo de 40 Horas
+
+hAgora.getHours() -> Apenas Horas
+
+
+Data e Hora no Java 8+ (Padrão ISO)
+
+LocalDateTime agoraCompleto = LocalDateTime.now(); -> Data e Hora atual
+LocalDateTime.of(2019, 2, 16, 20, 25, 10) -> 2019-2-16T20:25:10
+LocalDateTime.parse("2019-02-16T20:25:10") -> String pré-definida
+
+agoraCompleto.plusYears(20) -> Acréscimo de 20 Anos
+
+ZoneId fuso = ZoneId.systemDefault() -> Fuso Horário
+
+Set<String> fusos = ZoneId.getAvailableZoneIds()
+for(String f : fusos){
+	System.out.prinln(f); -> Escrever TODOS os Fusos Horários existentes
+}
+
+ZoneId sp = ZoneId.of("America/Sao_Paulo") -> Procurar Fuso Horário
+
+ZonedDateTime zdt = ZonedDateTime.off(LocalDateTime.parse("2019-02-16T20:25"),sp)
+-> Data + Hora + Fuso Horário
+
+ZonedDateTime.off(LocalDateTime.parse("2019-02-16T20:25:00[America/Sao_Paulo]"))
+-> Data + Hora + Fuso Horário
+
+
+Função Date e Calendário
+
+Date date = new Date();
+Calendar c = Calendar.getInstance()
+LocalDateTime ldt = LocalDateTime.ofInstant(date.toInstant(), sp)
+
+LocalDateTime ldt = LocalDateTime.ofInstant(c.toInstant(), sp)
+
+
+
+Formatação de Datas
+
+==== Conversão em milissegundos ====
+SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+Date primeiraDt = sdf.parse("01/01/2019");
+Date segundaDt  = sdf.parse("01/02/2019");
+
+long diffEmMil = Math.abs(segundoDf.getTime() - primeiraDt.getTime());
+long diff = TimeUnit.DAYS.convert(diffEmMil, TimeUnit.MILLISECONDS);
+
+sout(diff);
+
+
+==== Conversão de Data com Period ====
+LocalDate data1 = LocalDate.of(2019, 1, 1);
+LocalDate data2 = LocalDate.of(2019, 2, 1);
+
+Period periodo = Period.between(data1, data2);
+int dia = periodo.getDays();
+int mes = periodo.getMonths();
+int ano = periodo.getYears();
+
+
+==== Conversão de Hora com Duration ====
+LocalDateTime data1 = LocalDateTime.of(2019, 1, 1, 6, 30);
+LocalDateTime data2 = LocalDateTime.of(2019, 1, 1, 8, 30);
+
+Duration duracao = Duration.between(data1, data2);
+long diff = duracao.toHours();
+
+
+==== Conversão de Dias e Horas por Chrono ====
+LocalDateTime data1 = LocalDateTime.of(2019, 1, 1, 6, 30);
+LocalDateTime data2 = LocalDateTime.of(2019, 1, 1, 8, 30);
+
+long diff = ChronoUnit.HOURS.between(data1, data2);
+long diffDias = ChronoUnit.DAYS.between(data1, data2);
+
+sout(diff);
+sout(diffDias);
+
+
+
+
+
+
+
+
+
+
+
